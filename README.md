@@ -26,23 +26,23 @@ add functions tools for "new Date()"
 - hour in 24h = :)
 
 ### splitted time to Milliseconds formula
-```
+```js
 Ms = z + ( s * 1000 ) + ( m * 60000 ) + ( h * 3600000 );
 ```
 
 ### splitted time to Seconds formula
-```
+```js
 S = s + ( m * 60 ) + ( h * 3600 );
 ```
-```
+```js
 S = Math.round( 0.001 * z ) + s + ( m * 60 ) + ( h * 3600 );
 ```
 
 ### splitted time to Minutes formula
-```
+```js
 M = m + ( h * 60 );
 ```
-```
+```js
 M = Math.round( 0.01 * ( Math.round( 0.001 * z ) + s ) ) + m + ( h * 60 );
 ```
 
@@ -70,7 +70,7 @@ console.log( d.setTimeMs(4506).getSplittedTime() );
 ```
 
 ### nowMs() : milliseconds integer
-```
+```js
 let d = new Date();
 // exemple : 14h 42m 56s 012z
 
@@ -79,7 +79,7 @@ console.log( d.nowMs() );
 ```
 
 ### getHoursStr( lead zero [true*, false]) : string
-```
+```js
 let d = new Date();
 // exemple 4h 2m 6s 12z
 
@@ -91,7 +91,7 @@ console.log( d.getHoursStr(false) );
 ```
 
 ### getMinutesStr( lead zero [true*, false]) : string
-```
+```js
 let d = new Date();
 // exemple 4h 2m 6s 12z
 
@@ -103,7 +103,7 @@ console.log( d.getMinutesStr(false) );
 ```
 
 ### getSecondsStr( lead zero [true*, false]) : string
-```
+```js
 let d = new Date();
 // exemple 4h 2m 6s 12z
 
@@ -115,7 +115,7 @@ console.log( d.getSecondsStr(false) );
 ```
 
 ### getMillisecondsStr( lead zero [true*, false]) : string
-```
+```js
 let d = new Date();
 // exemple 4h 2m 6s 12z
 
@@ -127,7 +127,7 @@ console.log( d.getMillisecondsStr(false) );
 ```
 
 ### getSplittedTime( as string or numeric [true, false*], string lead zero [true*, false] ) : [object {h,m,s,z}]
-```
+```js
 let d = new Date();
 // exemple 4h 2m 6s 12z
 
