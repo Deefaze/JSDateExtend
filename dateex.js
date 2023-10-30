@@ -1,3 +1,5 @@
+/*
+*/
 const cHoursInDay            = 24;
 
 const cMinutesInHour         = 60;
@@ -12,8 +14,14 @@ const cMillisecondsInMinute  = cMillisecondsInSecond * cSecondsInMinute;
 const cMillisecondsInHour    = cMillisecondsInMinute * cMinutesInHour;
 const cMillisecondsInDay     = cMillisecondsInHour * cHoursInDay;
 
-
-Function.prototype.method = function(aName, aFunc){ if (!this.prototype[aName]) { this.prototype[aName] = aFunc; return this; }}; 
+/*
+*/
+Function.prototype.method = function(aName, aFunc){ 
+   if (!this.prototype[aName]) { 
+      this.prototype[aName] = aFunc; 
+      return this; 
+   }   
+}; 
 
 /* RAZ()
    set time to 00:00:00.000
@@ -50,10 +58,18 @@ Date.method('nowMs', function(){
    aPad : bool, true enable zero padding, false no zero padding, default true
    return : string
 */
-Date.method('getHoursStr',        function(aPad=true){ return aPad ? this.getHours().toString().padStart(2,'0') : this.getHours().toString(); });
-Date.method('getMinutesStr',      function(aPad=true){ return aPad ? this.getMinutes().toString().padStart(2,'0') : this.getMinutes().toString(); });
-Date.method('getSecondsStr',      function(aPad=true){ return aPad ? this.getSeconds().toString().padStart(2,'0') : this.getSeconds().toString(); });
-Date.method('getMillisecondsStr', function(aPad=true){ return aPad ? this.getMilliseconds().toString().padStart(3,'0') : this.getMilliseconds().toString(); });
+Date.method('getHoursStr', function(aPad=true){ 
+   return aPad ? this.getHours().toString().padStart(2,'0') : this.getHours().toString(); 
+});
+Date.method('getMinutesStr', function(aPad=true){ 
+   return aPad ? this.getMinutes().toString().padStart(2,'0') : this.getMinutes().toString(); 
+});
+Date.method('getSecondsStr', function(aPad=true){ 
+   return aPad ? this.getSeconds().toString().padStart(2,'0') : this.getSeconds().toString(); 
+});
+Date.method('getMillisecondsStr', function(aPad=true){ 
+   return aPad ? this.getMilliseconds().toString().padStart(3,'0') : this.getMilliseconds().toString(); 
+});
 
 /* getSplittedTime( aString = false, aPad = true )
    return an object with splitted time elements in numeric format or string format padded or not
