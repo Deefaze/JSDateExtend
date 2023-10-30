@@ -48,18 +48,43 @@ M = Math.round( 0.01 * ( Math.round( 0.001 * z ) + s ) ) + m + ( h * 60 );
 
 ---
 
-## Raz() : [date object]
+### Raz() : [date object]
+```js
+let d = new Date();
 
-## setTimeMs( milliseconds integer [0*]) : [date object]
+let spt = d.RAZ().setTimeMs(4506).getSplittedTime();
 
-## nowMs() : milliseconds integer
+console.log(spt);
 
-## getHoursStr( lead zero [true*, false]) : string
+/* spt output
+{ h: 0, m: 0, s: 4, z: 506 }
+*/
+```
 
-## getMinutesStr( lead zero [true*, false]) : string
+### setTimeMs( milliseconds integer [0*]) : [date object]
+```
+```
 
-## getSecondsStr( lead zero [true*, false]) : string
+### nowMs() : milliseconds integer
+```
+```
 
-## getMillisecondsStr( lead zero [true*, false]) : string
+### getHoursStr( lead zero [true*, false]) : string
+```
+```
 
-## getSplittedTime( as string or numeric [true, false*], string lead zero [true*, false] ) : [object {h,m,s,z}]
+### getMinutesStr( lead zero [true*, false]) : string
+```
+```
+
+### getSecondsStr( lead zero [true*, false]) : string
+```
+```
+
+### getMillisecondsStr( lead zero [true*, false]) : string
+```
+```
+
+### getSplittedTime( as string or numeric [true, false*], string lead zero [true*, false] ) : [object {h,m,s,z}]
+```
+```
