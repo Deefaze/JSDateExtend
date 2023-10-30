@@ -53,44 +53,93 @@ ensure time set to 0 hours 0 minutes 0 seconds 0 milliseconds
 ```js
 let d = new Date();
 
-let spt = d.Reset().setTimeMs(4506).getSplittedTime();
+d.Reset();
+d.setHours(3);
+d.setMilliseconds(4506);
 
-console.log(spt);
-
-/* spt output
-{ h: 0, m: 0, s: 4, z: 506 }
-*/
+console.log(d.getSplittedTime());
+// output : { h: 3, m: 0, s: 4, z: 506 }
 ```
 
 ### setTimeMs( milliseconds integer [0*]) : [date object]
 ```js
 let d = new Date();
 
-console.log( d.setTimeMs(4506) );
-console.log( d.Reset().setTimeMs(4506) );
-
+console.log( d.setTimeMs(4506).getSplittedTime() );
+// output : { h: 0, m: 0, s: 4, z: 506 }
 ```
 
 ### nowMs() : milliseconds integer
 ```
+let d = new Date();
+// exemple : 14h 42m 56s 012z
+
+console.log( d.nowMs() );
+// ouput : 52946012
 ```
 
 ### getHoursStr( lead zero [true*, false]) : string
 ```
+let d = new Date();
+// exemple 4h 2m 6s 12z
+
+console.log( d.getHoursStr() );
+// output : 04
+
+console.log( d.getHoursStr(false) );
+// output : 4
 ```
 
 ### getMinutesStr( lead zero [true*, false]) : string
 ```
+let d = new Date();
+// exemple 4h 2m 6s 12z
+
+console.log( d.getMinutesStr() );
+// output : 02
+
+console.log( d.getMinutesStr(false) );
+// output : 2
 ```
 
 ### getSecondsStr( lead zero [true*, false]) : string
 ```
+let d = new Date();
+// exemple 4h 2m 6s 12z
+
+console.log( d.getSecondssStr() );
+// output : 06
+
+console.log( d.getSecondsStr(false) );
+// output : 6
 ```
 
 ### getMillisecondsStr( lead zero [true*, false]) : string
 ```
+let d = new Date();
+// exemple 4h 2m 6s 12z
+
+console.log( d.getMillisecondsStr() );
+// output : 012
+
+console.log( d.getMillisecondsStr(false) );
+// output : 12
 ```
 
 ### getSplittedTime( as string or numeric [true, false*], string lead zero [true*, false] ) : [object {h,m,s,z}]
 ```
+let d = new Date();
+// exemple 4h 2m 6s 12z
+
+let dNum   = d.getSplittedTime()
+console.log( dNum );
+// output : { h: 4, m: 2, s: 6, z: 12 }
+
+let dStr   = d.getSplittedTime(true);
+console.log( dNum );
+// output : { h: '04', m: '02', s: '06', z: '012' }
+
+let dStrNP = d.getSplittedTime(true, false);
+console.log( dNum );
+// output : { h: '4', m: '2', s: '6', z: '12' }
 ```
