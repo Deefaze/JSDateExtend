@@ -48,11 +48,12 @@ M = Math.round( 0.01 * ( Math.round( 0.001 * z ) + s ) ) + m + ( h * 60 );
 
 ---
 
-### Raz() : [date object]
+### Reset() : [date object]
+ensure time set to 0 hours 0 minutes 0 seconds 0 milliseconds
 ```js
 let d = new Date();
 
-let spt = d.RAZ().setTimeMs(4506).getSplittedTime();
+let spt = d.Reset().setTimeMs(4506).getSplittedTime();
 
 console.log(spt);
 
@@ -62,7 +63,12 @@ console.log(spt);
 ```
 
 ### setTimeMs( milliseconds integer [0*]) : [date object]
-```
+```js
+let d = new Date();
+
+console.log( d.setTimeMs(4506) );
+console.log( d.Reset().setTimeMs(4506) );
+
 ```
 
 ### nowMs() : milliseconds integer
