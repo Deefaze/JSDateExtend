@@ -1,21 +1,28 @@
 /* CONSTANTS
 */
-const cHoursInDay            = 24;
+const cDayPerWeek            = 7;
+const cMonthsPerYear         = 12;
 
-const cMinutesInHour         = 60;
-const cMinutesInDay          = 1440;
+const cHoursPerDay            = 24;
+const cHoursPerWeek           = 168;
 
-const cSecondsInMinute       = 60;
-const cSecondsInHour         = 3600;
-const cSecondsInDay          = 86400;
+const cMinutesPerHour         = 60;
+const cMinutesPerDay          = 1440;
+const cMinutesPerWeek          = 10080;
 
-const cMillisecondsInSecond  = 1000;
-const cMillisecondsInMinute  = 60000;
-const cMillisecondsInHour    = 3600000;
-const cMillisecondsInDay     = 86400000;
+const cSecondsPerMinute       = 60;
+const cSecondsPerHour         = 3600;
+const cSecondsPerDay          = 86400;
+const cSecondsPerWeek         = 604800;
 
-const cMinTime               =0; 
-const cMaxTime               =86399;
+const cMillisecondsPerSecond  = 1000;
+const cMillisecondsPerMinute  = 60000;
+const cMillisecondsPerHour    = 3600000;
+const cMillisecondsPerDay     = 86400000;
+const cMillisecondsPerWeek    = 604800000;
+
+const cMinTime               = 0; 
+const cMaxTime               = 86399;
 
 /*
 */
@@ -96,14 +103,14 @@ Date.method('getSplitedTime', function(aString=false, aPad=true){
 
 /*
 */
-Date.method('getHoursInMinutes',        function(){ return this.getHours() * cMinutesInHour; });
-Date.method('getHoursInSeconds',        function(){ return this.getHours() * cSecondsInHour; });
-Date.method('getHoursInMilliseconds',   function(){ return this.getHours() * cMillisecondsInHour; });
+Date.method('getHoursInMinutes',        function(){ return this.getHours() * cMinutesPerHour; });
+Date.method('getHoursInSeconds',        function(){ return this.getHours() * cSecondsPerHour; });
+Date.method('getHoursInMilliseconds',   function(){ return this.getHours() * cMillisecondsPerHour; });
 
-Date.method('getMinutesInSeconds',      function(){ return this.getMinutes() * cSecondsInMinute; });
-Date.method('getMinutesInMilliseconds', function(){ return this.getMinutes() * cMillisecondsInMinute; });
+Date.method('getMinutesInSeconds',      function(){ return this.getMinutes() * cSecondsPerMinute; });
+Date.method('getMinutesInMilliseconds', function(){ return this.getMinutes() * cMillisecondsPerMinute; });
 
-Date.method('getSecondsInMilliseconds', function(){ return this.getSeconds() * cMillisecondsInSecond; });
+Date.method('getSecondsInMilliseconds', function(){ return this.getSeconds() * cMillisecondsPerSecond; });
 
 Date.method('getTimeInMinutes',         function(){ return this.getHoursInMinutes() + this.getMinutes(); });
 Date.method('getTimeInSeconds',         function(){ return this.getHoursInSeconds() + this.getMinutesInSeconds() + this.getSeconds(); });

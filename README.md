@@ -48,16 +48,28 @@ M = Math.round( 0.01 * ( Math.round( 0.001 * z ) + s ) ) + m + ( h * 60 );
 
 ---
 ### Constants
-- cHoursInDay
-- cMinutesInHour
-- cMinutesInDay
-- cSecondsInMinute
-- cSecondsInHour
-- cSecondsInDay
-- cMillisecondsInSecond
-- cMillisecondsInMinute
-- cMillisecondsInHour
-- cMillisecondsInDay
+- cDayPerWeek
+
+- cMonthsPerYear
+
+- cHoursPerDay
+- cHoursPerWeek
+
+- cMinutesPerHour
+- cMinutesPerDay
+- cMinutesPerWeek
+
+- cSecondsPerMinute
+- cSecondsPerHour
+- cSecondsPerDay
+- cSecondsPerWeek
+
+- cMillisecondsPerSecond
+- cMillisecondsPerMinute
+- cMillisecondsPerHour
+- cMillisecondsPerDay
+- cMillisecondsPerWeek
+
 - cMinTime
 - cMaxTime
 
