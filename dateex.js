@@ -96,9 +96,14 @@ Date.method('getSplitedTime', function(aString=false, aPad=true){
 Date.method('getHoursInMinutes',        function(){ return this.getHours() * cMinutesInHour; });
 Date.method('getHoursInSeconds',        function(){ return this.getHours() * cSecondsInHour; });
 Date.method('getHoursInMilliseconds',   function(){ return this.getHours() * cMillisecondsInHour; });
+
 Date.method('getMinutesInSeconds',      function(){ return this.getMinutes() * cSecondsInMinute; });
 Date.method('getMinutesInMilliseconds', function(){ return this.getMinutes() * cMillisecondsInMinute; });
+
 Date.method('getSecondsInMilliseconds', function(){ return this.getSeconds() * cMillisecondsInSecond; });
+
+Date.method('getTimeInMinutes', function(){ return this.getHoursInMinutes() + this.getMinutes(); });
+Date.method('getTimeInSeconds', function(){ return this.getHoursInSeconds() + this.getMinutesInSeconds() + this.getSeconds(); });
 
 // Date.method('', function(){});
 // Date.method('', function(){});
