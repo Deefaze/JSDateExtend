@@ -3,6 +3,38 @@ Simple extention of Date object for Javascript
 
 add functions tools for "new Date()"
 
+---
+
+## Memo values :
+### Z
+- milliseconds in second = 1000
+- milliseconds in minute = 60 000
+- milliseconds in hour = 3 600 000
+- milliseconds in 24h  = 86 400 000
+
+### S
+- seconds in minute = 60
+- seconds in hour = 3 600
+- seconds in 24h = 86 400
+- 
+### M
+- minutes in hour = 60
+- minutes in 24h = 3 600
+
+### H
+- hour in 24h = :)
+
+### time to Milliseconds formula
+Ms = z + ( s * 1000 ) + ( m * 60000 ) + ( h * 3600000 );
+
+### time to Seconds formula
+S = Math.round( 0.001 * z ) + s + ( m * 60 ) + ( h * 3600 );
+
+### time to Minutes formula
+M = Math.round( 0.01 * ( Math.round( 0.001 * z ) + s ) ) + m + ( h * 60 );
+
+---
+
 ## Raz() : [date object]
 
 ## setTimeMs( milliseconds integer [0*]) : [date object]
