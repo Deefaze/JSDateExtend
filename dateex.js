@@ -1,3 +1,18 @@
+const cHoursInDay            = 24;
+
+const cMinutesInHour         = 60;
+const cMinutesInDay          = cMinutesInHour * cHoursInDay;
+
+const cSecondsInMinute       = 60;
+const cSecondsInHour         = cSecondsInMinute * cMinutesInHour;
+const cSecondsInDay          = cSecondsInHour * cHoursInDay;
+
+const cMillisecondsInSecond  = 1000;
+const cMillisecondsInMinute  = cMillisecondsInSecond * cSecondsInMinute;
+const cMillisecondsInHour    = cMillisecondsInMinute * cMinutesInHour;
+const cMillisecondsInDay     = cMillisecondsInHour * cHoursInDay;
+
+
 Function.prototype.method = function(aName, aFunc){ if (!this.prototype[aName]) { this.prototype[aName] = aFunc; return this; }}; 
 
 /* RAZ()
@@ -27,7 +42,7 @@ Date.method('setTimeMs', function(aMilliseconds=0){
 */
 Date.method('nowMs', function(){ 
   let t = this.getSplitedTime(); 
-  return t.z + (t.s*1000) + (t.m*60000) + (t.h*3600000); 
+  return t.z + (t.s*cMillisecondsInSecond) + (t.m*cMillisecondsInMinute) + (t.h*cMillisecondsInHour); 
 });
 
 /* getHoursStr, getMinutesStr, getSecondsStr, getMillisecondsStr( aPad = true )
@@ -59,3 +74,16 @@ Date.method('getSplitedTime', function(aString=false, aPad=true){
     z: aString ? this.getMillisecondsStr(aPad) : this.getMilliseconds()
   }; 
 });
+
+/*
+*/
+Date.method('getHoursInMinutes',        function(){ return this.getHours() * cMinutesInHour; });
+Date.method('getHoursInSeconds',        function(){ return this.getHours() * cSecondsInHour; });
+Date.method('getHoursInMilliseconds',   function(){ return this.getHours() * cMillisecondsInHour; });
+Date.method('getMinutesInSeconds',      function(){ return this.getMinutes() * cSecondsInMinute; });
+Date.method('getMinutesInMilliseconds', function(){ return this.getMinutes() * cMillisecondsInMinute; });
+Date.method('getSecondsInMilliseconds', function(){ return this.getSeconds() * cMillisecondsInSecond; });
+
+// Date.method('', function(){});
+// Date.method('', function(){});
+// Date.method('', function(){});
