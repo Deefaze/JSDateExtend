@@ -1,18 +1,21 @@
-/*
+/* CONSTANTS
 */
 const cHoursInDay            = 24;
 
 const cMinutesInHour         = 60;
-const cMinutesInDay          = cMinutesInHour * cHoursInDay;
+const cMinutesInDay          = 1440;
 
 const cSecondsInMinute       = 60;
-const cSecondsInHour         = cSecondsInMinute * cMinutesInHour;
-const cSecondsInDay          = cSecondsInHour * cHoursInDay;
+const cSecondsInHour         = 3600;
+const cSecondsInDay          = 86400;
 
 const cMillisecondsInSecond  = 1000;
-const cMillisecondsInMinute  = cMillisecondsInSecond * cSecondsInMinute;
-const cMillisecondsInHour    = cMillisecondsInMinute * cMinutesInHour;
-const cMillisecondsInDay     = cMillisecondsInHour * cHoursInDay;
+const cMillisecondsInMinute  = 60000;
+const cMillisecondsInHour    = 3600000;
+const cMillisecondsInDay     = 86400000;
+
+const cMinTime               =0; 
+const cMaxTime               =86399;
 
 /*
 */
@@ -102,8 +105,8 @@ Date.method('getMinutesInMilliseconds', function(){ return this.getMinutes() * c
 
 Date.method('getSecondsInMilliseconds', function(){ return this.getSeconds() * cMillisecondsInSecond; });
 
-Date.method('getTimeInMinutes', function(){ return this.getHoursInMinutes() + this.getMinutes(); });
-Date.method('getTimeInSeconds', function(){ return this.getHoursInSeconds() + this.getMinutesInSeconds() + this.getSeconds(); });
+Date.method('getTimeInMinutes',         function(){ return this.getHoursInMinutes() + this.getMinutes(); });
+Date.method('getTimeInSeconds',         function(){ return this.getHoursInSeconds() + this.getMinutesInSeconds() + this.getSeconds(); });
 
 // Date.method('', function(){});
 // Date.method('', function(){});

@@ -47,6 +47,20 @@ M = Math.round( 0.01 * ( Math.round( 0.001 * z ) + s ) ) + m + ( h * 60 );
 ```
 
 ---
+### Constants
+- cHoursInDay
+- cMinutesInHour
+- cMinutesInDay
+- cSecondsInMinute
+- cSecondsInHour
+- cSecondsInDay
+- cMillisecondsInSecond
+- cMillisecondsInMinute
+- cMillisecondsInHour
+- cMillisecondsInDay
+- cMinTime
+- cMaxTime
+
 
 ### Reset() : [date object]
 ensure time set to 0 hours 0 minutes 0 seconds 0 milliseconds
