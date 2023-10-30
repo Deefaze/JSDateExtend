@@ -5,7 +5,7 @@ Function.prototype.method = function(aName, aFunc){ if (!this.prototype[aName]) 
    no arguments
    return : current date objet
 */
-Date.method('RAZ', function(){ 
+Date.method('Reset', function(){ 
   this.setHours(0,0,0,0); 
   return this; 
 });
@@ -16,7 +16,7 @@ Date.method('RAZ', function(){
   return : current date objet
 */
 Date.method('setTimeMs', function(aMilliseconds=0){ 
-  this.RAZ().setMilliseconds(aMilliseconds); 
+  this.Reset().setMilliseconds(aMilliseconds); 
   return this; 
 });
   
