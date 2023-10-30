@@ -157,3 +157,14 @@ let dStrNP = d.getSplittedTime(true, false);
 console.log( dNum );
 // output : { h: '4', m: '2', s: '6', z: '12' }
 ```
+
+### getXXXinXXX()
+- #### getHoursInMinutes()
+- #### getHoursInSeconds()
+- #### getHoursInMilliseconds()
+- #### getMinutesInSeconds()
+- #### getMinutesInMilliseconds()
+- #### getSecondsInMilliseconds()
+- #### getTimeInMinutes()
+- #### getTimeInSeconds()
+
