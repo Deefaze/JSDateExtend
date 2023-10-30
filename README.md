@@ -25,12 +25,12 @@ add functions tools for "new Date()"
 ### H
 - hour in 24h = :)
 
-### time h:m:s.z to Milliseconds formula
+### splitted time to Milliseconds formula
 ```
 Ms = z + ( s * 1000 ) + ( m * 60000 ) + ( h * 3600000 );
 ```
 
-### time h:m:s.z to Seconds formula
+### splitted time to Seconds formula
 ```
 S = s + ( m * 60 ) + ( h * 3600 );
 ```
@@ -38,7 +38,7 @@ S = s + ( m * 60 ) + ( h * 3600 );
 S = Math.round( 0.001 * z ) + s + ( m * 60 ) + ( h * 3600 );
 ```
 
-### time h:m:s.z to Minutes formula
+### splitted time to Minutes formula
 ```
 M = m + ( h * 60 );
 ```
