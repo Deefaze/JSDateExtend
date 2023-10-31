@@ -24,6 +24,14 @@ const cMillisecondsPerWeek    = 604800000;
 const cMinTime               = 0; 
 const cMaxTime               = 86399;
 
+const teMillisecond = 0x00;
+const teSecond      = 0x01;
+const teMinute      = 0x02;
+const teHour        = 0x04;
+const teAllSplit    = 0xFE;      
+const teAll         = 0xFF;
+
+
 /*
 */
 Function.prototype.method = function(aName, aFunc){ 
@@ -115,6 +123,3 @@ Date.method('getSecondsInMilliseconds', function(){ return this.getSeconds() * c
 Date.method('getTimeInMinutes',         function(){ return this.getHoursInMinutes() + this.getMinutes(); });
 Date.method('getTimeInSeconds',         function(){ return this.getHoursInSeconds() + this.getMinutesInSeconds() + this.getSeconds(); });
 
-// Date.method('', function(){});
-// Date.method('', function(){});
-// Date.method('', function(){});
